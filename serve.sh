@@ -4,6 +4,18 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
+# --- Prerequisites check ---
+if ! pkg-config --exists gdal 2>/dev/null; then
+    echo "ERROR: GDAL development headers not found."
+    echo "Install with: sudo apt-get install -y libgdal-dev"
+    exit 1
+fi
+
+if ! command -v npm >/dev/null 2>&1; then
+    echo "ERROR: npm not found. Install Node.js (https://nodejs.org)."
+    exit 1
+fi
+
 # Install Python deps
 uv sync
 
