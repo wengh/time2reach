@@ -349,7 +349,7 @@ CHICAGO = {
     ]
 }
 cities = [
-    # (CHICAGO, 'Chicago'),
+    (CHICAGO, 'Chicago'),
     # (PARIS, 'Paris'),
     # (LONDON, 'London'),
     # (MEXICO_CITY, 'MexicoCity'),
